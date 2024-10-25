@@ -12,7 +12,7 @@ spec:
       containers:
         - image: biplopdey/connect4-app:v1
           name: connect4-prod-image
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       type: front-end
