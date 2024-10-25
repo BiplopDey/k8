@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: connect4-deployment
+spec:
+  template:
+    metadata:
+      name: connect4-app
+      labels:
+        type: front-end
+    spec:
+      containers:
+        - image: connect4-prod
+          name: connect4-prod-image
+          imagePullPolicy: Never
+  replicas: 2
+  selector:
+    matchLabels:
+      type: front-end
